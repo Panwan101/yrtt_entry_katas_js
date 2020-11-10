@@ -4,6 +4,8 @@
 
 function past(h, m, s){
     // Your code here!
+    var millisecs = ((h * 3600000) + (m * 60000) + (s * 1000));
+    return millisecs;
 }
 
 module.exports = {

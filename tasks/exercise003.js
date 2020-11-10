@@ -23,6 +23,17 @@
 
 function rowWeights(array){
     // Your code here!
+    var t1_total_weight = 0, t2_total_weight = 0, cntr = 0;
+    for (i in array) {
+        cntr+=1;
+        if ((cntr % 2) === 1)  { 
+            t1_total_weight+=array[i];
+        } else {
+            t2_total_weight+=array[i];
+        }
+    }
+    rtn_arr = [t1_total_weight, t2_total_weight];
+    return rtn_arr;
 }
 
 module.exports = {

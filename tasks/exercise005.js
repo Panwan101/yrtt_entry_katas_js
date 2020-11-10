@@ -21,6 +21,25 @@
 
 function mexicanWave(str){
     // Your code here!
+    var char_cntr=0;
+    var rtn_list=[];
+    var wave_str = "";
+    for (x of str) {
+        wave_str="";
+        x_len=x.length;
+        if (x_len > 0)   { 
+            if (x != " ")  {
+                k = x.toUpperCase();
+                wave_str=((str.slice(0,(char_cntr)))+k+(str.slice((char_cntr+1))));
+                rtn_list.push((wave_str));
+            }
+        }else {                  //else if empty
+            wave_str=("");
+            rtn_list.push((wave_str));
+        }
+        char_cntr += 1;
+    }
+    return rtn_list 
 }
 
 module.exports = {

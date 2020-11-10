@@ -8,6 +8,36 @@
 function singles(arr){
     if (arr === undefined) throw new Error("array is required");
     // Your code here!
+
+    var obj = {};
+    var duplicates = [];
+    var noDup = [];
+    var sumUniques = 0;
+
+    for(var i = 0; i < arr.length; i++){
+        if(!obj[arr[i]]){
+            obj[arr[i]] = 1;
+            noDup.push(arr[i]);  //add to NoDuplicates array
+            sumUniques+=arr[i]
+        } else {
+            duplicates.push(arr[i]);  //add to Duplicates array
+        }
+    }
+
+    var unique = noDup.filter(function(item, index){
+        if(!duplicates.includes(noDup[index])){
+            return noDup[index];
+        }
+    });
+    var sum_noDup = noDup.reduce((a, b) => {
+        return a + b;
+        });
+        sum_duplicates = duplicates.reduce((a, b) => {
+        return a + b;
+        });
+    var sum = sum_noDup - sum_duplicates;
+
+    return sum
 }
 
 module.exports = {
